@@ -1,4 +1,4 @@
-<div class="selectable-card" (click)="toggleSelect()">
+<div class="selectable-card" (click)="toggleSelect()" [ngClass]="{'selectable-card--unselected': !faction.selected}">
   <div class="selectable-card__checkbox">
     <nb-checkbox [value]="faction.selected" status="primary" style="pointer-events: none;"></nb-checkbox>
   </div>

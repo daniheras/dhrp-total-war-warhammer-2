@@ -29,4 +29,17 @@
     padding: 4px;
     z-index: 200;
   }
+
+  &--unselected {
+    border: 2px solid #1b1b38;
+    img {
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
 }
