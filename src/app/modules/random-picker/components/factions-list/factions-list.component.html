@@ -1,0 +1,39 @@
+<div class="factions-list">
+  <div class="factions-list-actions">
+    <div class="factions-list-actions__filters">
+      <div class="only-playable">
+        <nb-checkbox
+          checked
+          nbTooltip="[BETA] Add all the game factions to the randomization. Usefull, for example, if you have a mod that enables unplayable factions."
+          nbTooltipStatus="primary"
+          [value]="(factionsService.filters$ | async).onlyPlayable"
+          (checkedChange)="getFactions()"
+          disabled
+          >
+            Only playable factions
+        </nb-checkbox>
+      </div>
+      <div class="select-all">
+        <nb-checkbox
+          checked
+          [(ngModel)]="selectAll"
+          (checkedChange)="selectAllToggled()"
+          >
+            Select all
+        </nb-checkbox>
+      </div>
+    </div>
+    <div class="factions-list-actions__submit">
+      <button nbButton status="primary" hero shape="round" (click)="goRandomizr()"><nb-icon icon="shuffle-2-outline"></nb-icon>Go random</button>
+    </div>
+  </div>
+  <div class="factions-list__factions">
+    <dhrp-selectable-item-card
+      *ngFor="let faction of factionsService.factions$ | async"
+      [faction]="faction"
+      style="width: 10%;"
+      [hidden]="faction.playable === (!(factionsService.filters$ | async).onlyPlayable || undefined)"
+    ></dhrp-selectable-item-card>
+  </div>
+</div>
+

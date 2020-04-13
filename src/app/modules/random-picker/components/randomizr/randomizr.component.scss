@@ -1,0 +1,40 @@
+.randomizr-wrapper {
+  padding: 4rem 0;
+}
+
+.randomizr {
+  width: 400px;
+  display: flex;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__selection {
+    position: absolute;
+    border-radius: 4px;
+    border: 2px solid #00d68f;
+    height: 84px;
+    width: 84px;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+.main-card {
+  box-shadow: 0 0 20px 10px black;
+  transition: .2s;
+
+  &--success {
+    box-shadow: 0 0 20px 10px #00d68f;
+  }
+}

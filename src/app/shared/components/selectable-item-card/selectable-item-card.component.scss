@@ -1,0 +1,32 @@
+.selectable-card {
+  background: #1b1b38;
+  padding: 1rem;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .2s;
+  border: 2px solid #a16eff;
+  position: relative;
+
+  &__image, &__name {
+    display: flex;
+    justify-content: center;
+  }
+
+  &:hover {
+    background: #6e6eb9;
+    img {
+      filter: grayscale(1);
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 4px;
+    z-index: 200;
+  }
+}

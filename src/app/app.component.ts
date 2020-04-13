@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { State } from './store/index';
+import { initFactionsState } from '@store/faction/faction.actions';
 
 @Component({
   selector: 'dhrp-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: '<router-outlet></router-outlet>',
+  styles: []
 })
 export class AppComponent {
-  title = 'dh-random-picker-tww2';
+  constructor(private store: Store<State>) {
+    this.store.dispatch(initFactionsState());
+  }
 }

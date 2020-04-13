@@ -1,0 +1,20 @@
+<ng-container *ngIf="currentFaction$ | async as faction">
+  <nb-card [status]="status" class="main-card" [ngClass]="{'main-card--success': status === 'success'}">
+    <nb-card-header>
+      <ng-container *ngIf="status === 'success'">
+        <h5 style="text-align: center;">{{ faction.name }}</h5>
+      </ng-container>
+      <ng-container *ngIf="status !== 'success'">
+        Picking random faction...
+      </ng-container>
+    </nb-card-header>
+    <nb-card-body>
+      <div class="randomizr">
+        <div class="randomizr__item">
+          <img [src]="faction.image" [alt]="faction.name">
+          <p>{{ faction.race }}</p>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</ng-container>

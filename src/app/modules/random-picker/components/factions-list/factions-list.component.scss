@@ -1,0 +1,22 @@
+.factions-list {
+  &-actions {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    &__filters {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__submit {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__factions {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
