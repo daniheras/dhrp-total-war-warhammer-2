@@ -505,7 +505,7 @@ export const factions: Faction[] = [
     "eyeOfVortex": true,
     "mortalEmpires": true,
     playable: true,
-    race: 'Vampire Counts'
+    race: 'Dark Elves'
   },
   {
     "name": "Dark Elves",
