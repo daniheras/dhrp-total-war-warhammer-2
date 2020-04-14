@@ -2043,7 +2043,7 @@ export const factions: Faction[] = [
     "mortalEmpires": true
   },
   {
-    "name": "Karaz-a-Karak",
+    "name": "Karaz-a-Karak (Thorgrim)",
     "image": "assets/images/factions/Karaz-a-Karak-(Mortal-Empires).png",
     "eyeOfVortex": false,
     "mortalEmpires": true,
@@ -2052,7 +2052,7 @@ export const factions: Faction[] = [
     race: 'Dwarf Realms'
   },
   {
-    "name": "Karaz-a-Karak",
+    "name": "Karaz-a-Karak (Grombrindal)",
     "image": "assets/images/factions/Karaz-a-Karak-(Mortal-Empires).png",
     "eyeOfVortex": false,
     "mortalEmpires": true,
