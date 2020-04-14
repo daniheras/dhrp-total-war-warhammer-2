@@ -29,7 +29,13 @@ export const initialState: FactionState = factionAdapter.getInitialState({
 
 const factionReducer = createReducer(
   initialState,
-  on(initFactionsState, (state) => factionAdapter.setAll([...factions].map(faction => ({ ...faction, selected: true })), state)),
+  on(initFactionsState, (state) => {
+    if (localStorage.getItem('faction')) {
+      return JSON.parse(localStorage.getItem('faction'));
+    } else {
+      return factionAdapter.setAll([...factions].map(faction => ({ ...faction, selected: true })), state);
+    }
+  }),
   on(toggleOnlyPlayableFilter, (state) => ({ ...state, onlyPlayable: !state.onlyPlayable })),
   on(toggleFactionSelection, (state, { factionId }) => factionAdapter.updateOne({id: factionId, changes: {
     selected: !state.entities[factionId].selected
