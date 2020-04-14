@@ -2647,4 +2647,8 @@ export const factions: Faction[] = [
     "eyeOfVortex": false,
     "mortalEmpires": true
   }
-].map((item, index) => ({ ...item, id: index }))
+].map((item, index) => ({
+  ...item,
+  id: index,
+  race: item.race || ''
+}))
