@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NbWindowRef, NbWindowService, NbDialogService } from '@nebular/theme';
+import { SettingsModalComponent } from '@modules/settings/components/settings-modal/settings-modal.component';
 
 @Component({
   selector: 'dhrp-default-layout',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private windowService: NbDialogService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openSettings(): void {
+    this.windowService.open(SettingsModalComponent);
   }
 
 }
