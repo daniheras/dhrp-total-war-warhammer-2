@@ -15,6 +15,21 @@ export const selectFactions = createSelector(
   selectAll
 );
 
+export const selectFactionsOrdered = createSelector(
+  selectFactions,
+  (factions) => factions.sort((factionA, factionB) => {
+    const raceA = factionA.race.toUpperCase();
+    const raceB = factionB.race.toUpperCase();
+    if ( raceA < raceB ) {
+      return -1;
+    } else if ( raceA > raceB ) {
+      return 1;
+    }
+
+    return 0;
+  })
+);
+
 export const selectFactionsFilters = createSelector(
   selectFactionState,
   ({ onlyPlayable }) => ({
